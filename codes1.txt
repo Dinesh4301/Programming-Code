@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+ 
+int main(void)
+{
+	int t,f;
+	long long i,j,len,k;
+	char arr[100005];
+	scanf("%d",&t);
+	while(t--)
+	{
+	    scanf("%s",arr);
+	    len=strlen(arr);
+	    f=0;
+	    i=0;
+	    while(arr[i]!='1'&&i<len)
+            i++;
+        j=len-1;
+        f=0;
+	    while(arr[j]!='1'&&j>=0)
+            j--;
+        if(i<j)
+        {
+            for(k=i;k<=j;k++)
+            {
+                if(arr[k]=='0')
+                {
+                    f=1;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            for(k=i;k>=j;k--)
+            {
+                if(arr[k]=='0')
+                {
+                    f=1;
+                    break;
+                }
+            }
+        }
+	    if(f==1)
+	        printf("NO\n");
+	    else
+	        printf("YES\n");
+	}
+	return 0;
+}
