@@ -1,0 +1,41 @@
+#include <stdio.h>
+#define ll long long
+int main(void) {
+	ll t;
+	scanf("%lld",&t);
+	while(t--)
+	{
+	    ll a,b;
+	    scanf("%lld",&a);
+	    scanf("%lld",&b);
+	    //printf("AA%lld BB%lld",a,b);
+	    if(((a-b)>2)||((b-a)>2)||(a==b))
+	        printf("NO\n");
+	    else
+	    {
+	        if(a%2==0)
+	        {
+	            if((a-1)==b)
+	                printf("YES\n");
+	            else if((a+2)==b)
+	                printf("YES\n");
+	            else if((a-2)==b)
+	                printf("YES\n");
+	            else if((a+1)==b)
+	                printf("NO\n");
+	       }
+	       else if(a%2!=0)
+	       {
+	           if((a-1)==b)
+	                printf("NO\n");
+	            else if((a+2)==b)
+	                printf("YES\n");
+	            else if((a-2)==b)
+	                printf("YES\n");
+	            else if((a+1)==b)
+	                printf("YES\n");
+	       }
+	    }
+	}
+	return 0;
+}
